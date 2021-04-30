@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/app_info_menu"
+        android:title="@string/app_info_title" />
+    <item
+        android:id="@+id/settings_menu"
+        android:title="@string/settings" />
+    <item
+        android:id="@+id/ratings_menu"
+        android:title="@string/ratings" />
+</menu>

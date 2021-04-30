@@ -10,16 +10,19 @@
     <string name="settings">Settings</string>
     <string name="show_product_alert">Confirm product after chosen</string>
     <string name="look_up_category">Category to look up makeup products</string>
+    <string name="ratings">Ratings</string>
 
-    <string-array name="look_up_categories" >
+    <string-array name="look_up_categories">
         <item>Product type</item>
         <item>Product brand</item>
     </string-array>
 
-    <string-array name="categories_values" >
+    <string-array name="categories_values">
         <item>0</item>
         <item>1</item>
     </string-array>
-    
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

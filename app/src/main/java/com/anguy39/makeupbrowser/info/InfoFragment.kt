@@ -1,10 +1,8 @@
 package com.anguy39.makeupbrowser.info
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.anguy39.makeupbrowser.BuildConfig
 import com.anguy39.makeupbrowser.R
 import com.anguy39.makeupbrowser.databinding.FragmentInfoBinding
@@ -17,6 +15,7 @@ class InfoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         val infoFragmentBinding = FragmentInfoBinding.inflate(inflater, container, false)
         binding = infoFragmentBinding
         return infoFragmentBinding.root
@@ -34,6 +33,11 @@ class InfoFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        menu.clear()
     }
 
 
