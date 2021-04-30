@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
-    app:startDestination="@id/infoFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/settingsFragment">
 
     <fragment
         android:id="@+id/infoFragment"
         android:name="com.anguy39.makeupbrowser.info.InfoFragment"
         android:label="InfoFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.anguy39.makeupbrowser.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

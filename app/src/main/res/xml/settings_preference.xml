@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="choose_product_alert"
+        android:title="@string/show_product_alert"/>
+
+    <ListPreference
+        android:summary="%s"
+        android:defaultValue="0"
+        android:entries="@array/look_up_categories"
+        android:entryValues="@array/categories_values"
+        android:key="category_selection"
+        android:title="@string/look_up_category"/>
+
+</PreferenceScreen>
