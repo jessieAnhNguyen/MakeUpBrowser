@@ -33,5 +33,14 @@
         android:id="@+id/listFragment"
         android:name="com.anguy39.makeupbrowser.main.ListFragment"
         android:label="list_fragment"
-        tools:layout="@layout/list_fragment" />
+        tools:layout="@layout/list_fragment" >
+        <action
+            android:id="@+id/action_listFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.anguy39.makeupbrowser.main.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
 </navigation>

@@ -5,25 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.anguy39.makeupbrowser.R
 import com.anguy39.makeupbrowser.databinding.RecyclerItemBinding
 
+private const val TAG = "BrandAdapter"
 class BrandAdapter: RecyclerView.Adapter<BrandAdapter.BrandViewHolder>() {
 
     private var brandList: List<String> = emptyList()
 
     inner class BrandViewHolder(private val binding: RecyclerItemBinding) : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
         private lateinit var brand: String
-        private val brandItemTextView: TextView = itemView.findViewById(R.id.brand_textView)
 
         init {
-//            friendItemTextView.setOnClickListener(this)
-//            friendtoDeleteTextView.text = ""
+            binding.brandTextView.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {
-//            binding.apply {
+
+            binding.root.findNavController().navigate(R.id.action_listFragment_to_resultFragment)
 //                friendToDelete = friend
 //                friendtoDeleteTextView.text = "Friend to be deleted is ${friendToDelete.firstName}"
 //                Log.d(TAG, "HERE: " + friendtoDeleteTextView.text.toString())
@@ -35,7 +36,7 @@ class BrandAdapter: RecyclerView.Adapter<BrandAdapter.BrandViewHolder>() {
 
         fun bind(brand: String) {
             this.brand = brand
-            brandItemTextView.text = brand
+            binding.brandTextView.text = brand
         }
     }
 
