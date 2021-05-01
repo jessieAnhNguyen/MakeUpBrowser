@@ -25,7 +25,7 @@ class WelcomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
             goButton.setOnClickListener {
-                it.findNavController().navigate(R.id.action_welcomeFragment_to_settingsFragment)
+                it.findNavController().navigate(R.id.action_welcomeFragment_to_listFragment)
             }
         }
     }

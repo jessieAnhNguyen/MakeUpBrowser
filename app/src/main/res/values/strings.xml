@@ -26,5 +26,7 @@
     <string name="pitch">We have the most up-to-date information about makeup products</string>
     <string name="instruction">You can go to Settings to choose whether search by product type or brand</string>
     <string name="go">Let\'s go</string>
+    <string name="list_of_brand">List of Brands</string>
+    <string name="list_of_type">List of Product Types</string>
 
 </resources>
