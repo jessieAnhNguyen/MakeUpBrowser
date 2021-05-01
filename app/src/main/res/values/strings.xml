@@ -29,5 +29,9 @@
     <string name="list_of_brand">List of Brands</string>
     <string name="list_of_type">List of Product Types</string>
     <string name="result">Your Search Result</string>
+    <string name="brand">Brand</string>
+    <string name="price">Price</string>
+    <string name="type">Type</string>
+    <string name="link">Link</string>
 
 </resources>

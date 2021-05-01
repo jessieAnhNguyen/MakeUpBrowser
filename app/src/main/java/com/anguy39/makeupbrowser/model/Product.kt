@@ -5,5 +5,6 @@ class Product {
     var name: String = ""
     var price: String = ""
     var type: String = ""
-    var rating: Int = 0
+    var productLink: String = ""
+    var imageLink: String = ""
 }
