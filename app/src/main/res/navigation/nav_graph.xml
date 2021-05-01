@@ -16,7 +16,7 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.anguy39.makeupbrowser.main.WelcomeFragment"
+        android:name="com.anguy39.makeupbrowser.welcome.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" >
         <action

@@ -3,13 +3,14 @@ package com.anguy39.makeupbrowser.info
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.anguy39.makeupbrowser.BuildConfig
 import com.anguy39.makeupbrowser.R
 import com.anguy39.makeupbrowser.databinding.FragmentInfoBinding
 
 class InfoFragment : Fragment() {
 
-    var binding: FragmentInfoBinding? = null
+    private var binding: FragmentInfoBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
