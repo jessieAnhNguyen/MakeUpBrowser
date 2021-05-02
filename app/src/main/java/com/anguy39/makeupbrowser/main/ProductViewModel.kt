@@ -19,6 +19,7 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
     private var _brandList = MutableLiveData<List<String>>(listOf("Dior", "Maybelline", "Clinique", "Colourpop", "Covergirl", "Dr. Hauschka",
         "Glossier", "L'oreal", "lotus cosmetics usa", "Milani", "nyx", "Revlon"))
     var brandList: LiveData<List<String>> = _brandList
+    var currBrand: String = ""
 
     private var _productList = MutableLiveData<List<Product>>()
     var productList: LiveData<List<Product>> = _productList
@@ -36,7 +37,11 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
                 _productList.value = emptyList()
                 response.body()?.let {
                     _productList.value = it
-                    Log.d(TAG, "product list is " + (_productList.value?.get(0)!!.name))
+                    for (i in _productList.value!!.indices) {
+                        _productList.value!!.get(i).name.replace("\\s".toRegex(), "")
+                        Log.d(TAG, "name: ${_productList.value!!.get(i).name}")
+                    }
+//                    Log.d(TAG, "product list is " + (_productList.value?.get(0)!!.name))
                 }
             }
 

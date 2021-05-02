@@ -29,7 +29,7 @@ class ListFragment : Fragment() {
         brandAdapter = BrandAdapter()
 
         binding?.apply {
-            recyclerView.run {
+            brandRecycleView.run {
                 layoutManager = LinearLayoutManager(context)
                 adapter = brandAdapter
             }
@@ -67,16 +67,9 @@ class ListFragment : Fragment() {
             }
 
             override fun onClick(v: View?) {
-
-                binding.root.findNavController().navigate(R.id.action_listFragment_to_resultFragment)
                 sharedViewModel.fetchProductList(brand)
-
-//                friendToDelete = friend
-//                friendtoDeleteTextView.text = "Friend to be deleted is ${friendToDelete.firstName}"
-//                Log.d(TAG, "HERE: " + friendtoDeleteTextView.text.toString())
-//                friendtoDeleteTextView.visibility = View.VISIBLE
-//            }
-
+                sharedViewModel.currBrand = brand
+                binding.root.findNavController().navigate(R.id.action_listFragment_to_resultFragment)
 
             }
 
