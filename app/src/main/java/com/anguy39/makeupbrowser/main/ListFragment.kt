@@ -55,6 +55,9 @@ class ListFragment : Fragment() {
             }
         }
 
+        if (sharedViewModel.currCategory == "brand") binding?.listTextView!!.text = getString(R.string.list_of_brand)
+        else binding?.listTextView!!.text = getString(R.string.list_of_type)
+
         return listFragmentBinding.root
     }
 
