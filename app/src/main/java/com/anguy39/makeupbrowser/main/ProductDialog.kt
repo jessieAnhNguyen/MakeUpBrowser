@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import com.anguy39.makeupbrowser.R
 import com.anguy39.makeupbrowser.databinding.FragmentProductBinding
 import com.squareup.picasso.Picasso
 
 
-class ProductFragment : DialogFragment() {
+class ProductDialog : DialogFragment() {
 
     private val sharedViewModel: ProductViewModel by activityViewModels()
     private var binding: FragmentProductBinding? = null
@@ -32,6 +33,9 @@ class ProductFragment : DialogFragment() {
             priceTextView.text = sharedViewModel.currProduct.price
             typeTextView.text = sharedViewModel.currProduct.product_type
             loadProductImage(sharedViewModel.currProduct.image_link)
+            doneProductButton.setOnClickListener {
+                it.findNavController().navigate(R.id.action_productFragment_to_resultFragment)
+            }
         }
     }
 

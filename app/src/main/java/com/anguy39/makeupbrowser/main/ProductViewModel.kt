@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 private const val TAG = "ProductViewModel"
 class ProductViewModel(app: Application) : AndroidViewModel(app) {
-    private var _brandList = MutableLiveData<List<String>>(listOf("Dior", "Maybelline", "Clinique", "Colourpop", "Covergirl", "Dr. Hauschka",
+    private var _brandList = MutableLiveData<List<String>>(listOf("Maybelline", "Clinique", "Colourpop", "Covergirl", "Dr. Hauschka",
         "Glossier", "L'oreal", "lotus cosmetics usa", "Milani", "nyx", "Revlon"))
     var brandList: LiveData<List<String>> = _brandList
     var currBrand: String = ""

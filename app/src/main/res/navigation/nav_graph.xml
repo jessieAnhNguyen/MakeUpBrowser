@@ -49,7 +49,11 @@
     </fragment>
     <fragment
         android:id="@+id/productFragment"
-        android:name="com.anguy39.makeupbrowser.main.ProductFragment"
+        android:name="com.anguy39.makeupbrowser.main.ProductDialog"
         android:label="fragment_product"
-        tools:layout="@layout/fragment_product" />
+        tools:layout="@layout/fragment_product" >
+        <action
+            android:id="@+id/action_productFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
 </navigation>
