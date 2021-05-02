@@ -1,4 +1,4 @@
-package com.anguy39.makeupbrowser.model
+package com.anguy39.makeupbrowser.main
 
 class Product {
     var brand: String = ""
@@ -7,4 +7,8 @@ class Product {
     var type: String = ""
     var productLink: String = ""
     var imageLink: String = ""
+}
+
+class ProductResponse {
+    val productList: List<Product>? = null
 }
