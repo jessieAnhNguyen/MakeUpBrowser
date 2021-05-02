@@ -20,14 +20,19 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
         "Glossier", "L'oreal", "lotus cosmetics usa", "Milani", "nyx", "Revlon"))
     var brandList: LiveData<List<String>> = _brandList
 
+    private var _typeList = MutableLiveData<List<String>>(listOf("Blush", "Bronzer", "Eyebrow", "Eyeliner", "Eyeshadow",
+            "Foundation", "Lipstick", "Mascara"))
+    var typeList: LiveData<List<String>> = _typeList
+
     var currCategory: String = ""
     var currBrand: String = ""
+    var currType: String = ""
 
     private var _productList = MutableLiveData<List<Product>>()
     var productList: LiveData<List<Product>> = _productList
     var currProduct: Product = Product()
 
-    fun fetchProductList(brand: String) {
+    fun fetchFromBrand(brand: String) {
         Log.d(TAG, "start fetching ...")
         val productListRequest: Call<List<Product>> = productApi.fetchProduct(brand)
         Log.d(TAG, "Finish fetching")
@@ -61,6 +66,10 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
 
     fun updateBrand(brand: String) {
         this.currBrand = brand
+    }
+
+    fun updateType(type: String) {
+        this.currType = type
     }
 
     fun updateProduct(product: Product) {

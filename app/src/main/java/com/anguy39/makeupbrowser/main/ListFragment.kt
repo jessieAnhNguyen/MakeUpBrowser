@@ -30,6 +30,7 @@ class ListFragment : Fragment() {
 
     private var binding: ListFragmentBinding? = null
     private lateinit var brandAdapter: BrandAdapter
+    private lateinit var typeAdapter: TypeAdapter
 
     private val prefs: SharedPreferences by lazy {
         PreferenceManager.getDefaultSharedPreferences(activity)
@@ -44,11 +45,13 @@ class ListFragment : Fragment() {
 
         Log.d(TAG, "current category is ${sharedViewModel.currCategory}")
         brandAdapter = BrandAdapter()
+        typeAdapter = TypeAdapter()
 
         binding?.apply {
             brandRecycleView.run {
                 layoutManager = LinearLayoutManager(context)
-                adapter = brandAdapter
+                if (sharedViewModel.currCategory == "brand") adapter = brandAdapter
+                else adapter = typeAdapter
             }
         }
 
@@ -57,26 +60,17 @@ class ListFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        sharedViewModel.brandList.observe(viewLifecycleOwner, {
-            brandAdapter.updateBrandsList(it)
-        })
+        if (sharedViewModel.currCategory == "brand") {
+            sharedViewModel.brandList.observe(viewLifecycleOwner, {
+                brandAdapter.updateBrandsList(it)
+            })
+        }
+        else {
+            sharedViewModel.typeList.observe(viewLifecycleOwner, {
+                typeAdapter.updateTypesList(it)
+            })
+        }
     }
-
-    override fun onResume() {
-        super.onResume()
-//        prefs.registerOnSharedPreferenceChangeListener(this)
-    }
-
-//    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-//        Log.d(TAG, "go into onSharedPreferenceChanged")
-//        when (key) {
-//            CATEGORY_CHOICE -> {
-//                Log.d(TAG, "set category")
-//                setCategory()
-//            }
-//        }
-//    }
-
 
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -101,7 +95,7 @@ class ListFragment : Fragment() {
             }
 
             override fun onClick(v: View?) {
-                sharedViewModel.fetchProductList(brand)
+                sharedViewModel.fetchFromBrand(brand)
                 sharedViewModel.updateBrand(brand)
                 binding.root.findNavController().navigate(R.id.action_listFragment_to_resultFragment)
 
@@ -124,6 +118,45 @@ class ListFragment : Fragment() {
 
         fun updateBrandsList(brandList: List<String>) {
             this.brandList = brandList
+            notifyDataSetChanged()
+        }
+    }
+
+    inner class TypeAdapter: RecyclerView.Adapter<TypeAdapter.TypeViewHolder>() {
+
+        private var typeList: List<String> = emptyList()
+
+        inner class TypeViewHolder(private val binding: RecyclerItemBinding) : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
+            private lateinit var type: String
+
+            init {
+                binding.brandTextView.setOnClickListener(this)
+            }
+
+            override fun onClick(v: View?) {
+                sharedViewModel.fetchFromBrand(type)
+                sharedViewModel.updateType(type)
+                binding.root.findNavController().navigate(R.id.action_listFragment_to_resultFragment)
+
+            }
+
+            fun bind(type: String) {
+                this.type = type
+                binding.brandTextView.text = type
+            }
+        }
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TypeViewHolder {
+            val view = RecyclerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            return TypeViewHolder(view)
+        }
+
+        override fun getItemCount() = typeList.size
+
+        override fun onBindViewHolder(holder: TypeViewHolder, position: Int) = holder.bind(typeList[position])
+
+        fun updateTypesList(typeList: List<String>) {
+            this.typeList = typeList
             notifyDataSetChanged()
         }
     }
