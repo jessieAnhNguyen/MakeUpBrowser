@@ -3,7 +3,7 @@
 
     <CheckBoxPreference
         android:defaultValue="true"
-        android:key="choose_product_alert"
+        android:key="confirm_settings_alert"
         android:title="@string/show_product_alert"/>
 
     <ListPreference
@@ -11,7 +11,7 @@
         android:defaultValue="0"
         android:entries="@array/look_up_categories"
         android:entryValues="@array/categories_values"
-        android:key="category_selection"
+        android:key="category_choice"
         android:title="@string/look_up_category"/>
 
 </PreferenceScreen>

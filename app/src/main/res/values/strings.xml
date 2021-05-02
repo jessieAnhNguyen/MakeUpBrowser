@@ -14,8 +14,8 @@
     <string name="welcome">Welcome to MakeUp Browser</string>
 
     <string-array name="look_up_categories">
-        <item>Product type</item>
         <item>Product brand</item>
+        <item>Product type</item>
     </string-array>
 
     <string-array name="categories_values">

@@ -19,6 +19,8 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
     private var _brandList = MutableLiveData<List<String>>(listOf("Maybelline", "Clinique", "Colourpop", "Covergirl", "Dr. Hauschka",
         "Glossier", "L'oreal", "lotus cosmetics usa", "Milani", "nyx", "Revlon"))
     var brandList: LiveData<List<String>> = _brandList
+
+    var currCategory: String = ""
     var currBrand: String = ""
 
     private var _productList = MutableLiveData<List<Product>>()
@@ -51,6 +53,10 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
                 Log.d(TAG, t.toString())
             }
         })
+    }
+
+    fun updateCategory(category: String) {
+        this.currCategory = category
     }
 
     fun updateBrand(brand: String) {

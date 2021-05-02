@@ -1,5 +1,6 @@
 package com.anguy39.makeupbrowser
 
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -7,9 +8,14 @@ import android.view.MenuItem
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import androidx.preference.PreferenceManager
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
+
+    private val prefs: SharedPreferences by lazy {
+        PreferenceManager.getDefaultSharedPreferences(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_MakeUpBrowser)
@@ -55,6 +61,12 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    companion object {
+        const val CONFIRM_SETTINGS = "confirm_settings_alert"
+        const val CATEGORY_CHOICE = "category_choice"
+        const val EFFECT_SELECTION = "effect_selection"
     }
 
 }
