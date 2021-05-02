@@ -23,6 +23,7 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
 
     private var _productList = MutableLiveData<List<Product>>()
     var productList: LiveData<List<Product>> = _productList
+    var currProduct: Product = Product()
 
     fun fetchProductList(brand: String) {
         Log.d(TAG, "start fetching ...")
@@ -38,7 +39,7 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
                 response.body()?.let {
                     _productList.value = it
                     for (i in _productList.value!!.indices) {
-                        _productList.value!!.get(i).name.replace("\\s".toRegex(), "")
+                        _productList.value!!.get(i).name.replace("\t".toRegex(), "").replace("\\s".toRegex(), "")
                         Log.d(TAG, "name: ${_productList.value!!.get(i).name}")
                     }
 //                    Log.d(TAG, "product list is " + (_productList.value?.get(0)!!.name))
@@ -50,6 +51,14 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
                 Log.d(TAG, t.toString())
             }
         })
+    }
+
+    fun updateBrand(brand: String) {
+        this.currBrand = brand
+    }
+
+    fun updateProduct(product: Product) {
+        this.currProduct = product
     }
 
     companion object {

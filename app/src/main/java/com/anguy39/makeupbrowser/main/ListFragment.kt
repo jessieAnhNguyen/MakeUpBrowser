@@ -68,7 +68,7 @@ class ListFragment : Fragment() {
 
             override fun onClick(v: View?) {
                 sharedViewModel.fetchProductList(brand)
-                sharedViewModel.currBrand = brand
+                sharedViewModel.updateBrand(brand)
                 binding.root.findNavController().navigate(R.id.action_listFragment_to_resultFragment)
 
             }

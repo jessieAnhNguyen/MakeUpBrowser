@@ -74,8 +74,7 @@ class ResultFragment : Fragment() {
             }
 
             override fun onClick(v: View?) {
-//                sharedViewModel.fetchProductList(brand)
-//                sharedViewModel.currBrand = brand
+                sharedViewModel.updateProduct(product)
                 binding.root.findNavController().navigate(R.id.action_resultFragment_to_productFragment)
 
             }
