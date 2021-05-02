@@ -9,5 +9,5 @@ interface ProductAPI {
     @GET("api/v1/products.json")
     fun fetchProduct(
         @Query("brand") brand: String
-    ): Call<ProductResponse>
+    ): Call<List<Product>>
 }

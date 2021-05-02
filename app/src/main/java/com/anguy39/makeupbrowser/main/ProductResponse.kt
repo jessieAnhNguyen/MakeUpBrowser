@@ -10,5 +10,5 @@ class Product {
 }
 
 class ProductResponse {
-    val productList: List<Product>? = null
+    val product: Product? = null
 }
