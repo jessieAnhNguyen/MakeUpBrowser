@@ -18,7 +18,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.Theme_MakeUpBrowser)
+        if (prefs.getBoolean(THEME_SELECTION, false)) {
+            setTheme(R.style.DarkModeTheme)
+        }
+        else setTheme(R.style.Theme_MakeUpBrowser)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -66,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         const val CONFIRM_SETTINGS = "confirm_settings_alert"
         const val CATEGORY_CHOICE = "category_choice"
-        const val EFFECT_SELECTION = "effect_selection"
+        const val THEME_SELECTION = "theme_selection"
     }
 
 }

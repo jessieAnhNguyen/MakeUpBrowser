@@ -1,5 +1,6 @@
 package com.anguy39.makeupbrowser.main
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -83,6 +84,7 @@ class ResultFragment : Fragment() {
 
             init {
                 binding.brandTextView.setOnClickListener(this)
+                binding.itemCardView.setCardBackgroundColor(Color.parseColor("#B1C294"))
             }
 
             override fun onClick(v: View?) {

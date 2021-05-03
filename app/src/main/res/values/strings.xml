@@ -33,5 +33,9 @@
     <string name="price">Price</string>
     <string name="type">Type</string>
     <string name="link">Link</string>
+    <string name="change_setting">Are you sure you want to change this setting?</string>
+    <string name="attention">Attention!</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
