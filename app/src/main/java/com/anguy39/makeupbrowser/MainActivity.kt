@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.ratings_menu -> {
+                navHostFragment.navController.navigate(R.id.action_welcomeFragment_to_ratingFragment)
                 true
             }
             else -> super.onOptionsItemSelected(item)

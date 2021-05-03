@@ -40,15 +40,15 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         when (key) {
             CONFIRM_SETTINGS -> {
 //                Log.d(TAG, "set new settings")
-                changeSettingAlert("confirm")
+//                changeSettingAlert("confirm")
             }
             CATEGORY_CHOICE -> {
 //                Log.d(TAG, "change category")
-                changeSettingAlert("category")
+//                changeSettingAlert("category")
                 setCategory()
             }
             THEME_SELECTION -> {
-                changeSettingAlert("theme")
+//                changeSettingAlert("theme")
             }
         }
     }
@@ -64,27 +64,27 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
 
     }
 
-    fun changeSettingAlert(setting: String) {
-        val msg = resources.getString(R.string.change_setting)
-        val builder = android.app.AlertDialog.Builder(context)
-        with(builder) {
-            setTitle(R.string.attention)
-            setMessage(msg)
-            setPositiveButton(R.string.yes) { _, _ ->
-            }
-            setNegativeButton(R.string.cancel) { _, _ ->
-                with(prefs.edit()) {
-                    when (setting) {
-                        "confirm" -> remove(CONFIRM_SETTINGS)
-                        "category" -> remove(CATEGORY_CHOICE)
-                        "theme" -> remove(THEME_SELECTION)
-                    }
-                    apply()
-                }
-            }
-            show()
-        }
-    }
+//    fun changeSettingAlert(setting: String) {
+//        val msg = resources.getString(R.string.change_setting)
+//        val builder = android.app.AlertDialog.Builder(context)
+//        with(builder) {
+//            setTitle(R.string.attention)
+//            setMessage(msg)
+//            setPositiveButton(R.string.yes) { _, _ ->
+//            }
+//            setNegativeButton(R.string.cancel) { _, _ ->
+//                with(prefs.edit()) {
+//                    when (setting) {
+//                        "confirm" -> remove(CONFIRM_SETTINGS)
+//                        "category" -> remove(CATEGORY_CHOICE)
+//                        "theme" -> remove(THEME_SELECTION)
+//                    }
+//                    apply()
+//                }
+//            }
+//            show()
+//        }
+//    }
 
 
     override fun onDestroyView() {
