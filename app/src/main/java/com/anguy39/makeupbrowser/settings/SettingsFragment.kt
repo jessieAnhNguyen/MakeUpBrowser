@@ -12,7 +12,7 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import com.anguy39.makeupbrowser.MainActivity
 import com.anguy39.makeupbrowser.MainActivity.Companion.CATEGORY_CHOICE
-import com.anguy39.makeupbrowser.MainActivity.Companion.CONFIRM_SETTINGS
+import com.anguy39.makeupbrowser.MainActivity.Companion.CONFIRM_RATING
 import com.anguy39.makeupbrowser.MainActivity.Companion.THEME_SELECTION
 import com.anguy39.makeupbrowser.main.ProductViewModel
 
@@ -38,7 +38,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         Log.d(TAG, "change here!")
         when (key) {
-            CONFIRM_SETTINGS -> {
+            CONFIRM_RATING -> {
 //                Log.d(TAG, "set new settings")
 //                changeSettingAlert("confirm")
             }

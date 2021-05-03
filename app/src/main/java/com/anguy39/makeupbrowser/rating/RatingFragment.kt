@@ -1,17 +1,24 @@
 package com.anguy39.makeupbrowser.rating
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.RatingBar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.preference.PreferenceManager
 import com.anguy39.makeupbrowser.BuildConfig
+import com.anguy39.makeupbrowser.MainActivity
 import com.anguy39.makeupbrowser.R
 import com.anguy39.makeupbrowser.databinding.FragmentInfoBinding
 import com.anguy39.makeupbrowser.databinding.FragmentRatingBinding
 
-class RatingFragment : Fragment() {
+class RatingFragment : Fragment(){
     private var binding: FragmentRatingBinding? = null
+    private val prefs: SharedPreferences by lazy {
+        PreferenceManager.getDefaultSharedPreferences(activity)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -25,7 +32,14 @@ class RatingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
             submitRatingButton.setOnClickListener {
-                updateRatingAlert(ratingBar.rating)
+                if (prefs.getBoolean(MainActivity.CONFIRM_RATING, true)) {
+                    updateRatingAlert(ratingBar.rating)
+                }
+                else {
+                    findNavController().navigate(R.id.action_ratingFragment_to_welcomeFragment)
+                    confirmRatingAlert()
+                }
+
             }
         }
     }

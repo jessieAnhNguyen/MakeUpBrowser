@@ -3,8 +3,8 @@
 
     <CheckBoxPreference
         android:defaultValue="false"
-        android:key="confirm_settings_alert"
-        android:title="@string/show_product_alert" />
+        android:key="confirm_rating_alert"
+        android:title="@string/confirm_rating_alert" />
 
     <ListPreference
         android:summary="%s"
