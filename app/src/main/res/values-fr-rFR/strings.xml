@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MakeUpBrowser</string>
+    <string name="app_info_title">Informations sur l\'application</string>
+    <string name="welcome">Bienvenue chez MakeUp Browser</string>
+    <string name="app_name_title">Nom de l\'application</string>
+    <string name="app_id">ID d\'application</string>
+    <string name="version_number">Numéro de version</string>
+    <string name="copyright">droits d\'auteur</string>
+    <string name="done">Fait</string>
+    <string name="settings">Paramètres</string>
+    <string name="list_of_brand">Liste des marques</string>
+    <string name="list_of_type">Liste des produits</string>
+    <string name="result">Votre résultat de recherche</string>
+    <string name="confirm_rating_alert">Afficher le message pour confirmer l\'évaluation</string>
+    <string name="look_up_category">Catégorie pour rechercher des produits de maquillage</string>
+    <string name="ratings">Évaluations</string>
+    <string name="pitch">Nous avons les informations les plus récentes sur les produits de maquillage</string>
+    <string name="instruction">Vous pouvez accéder aux paramètres pour choisir de rechercher par type de produit ou par marque</string>
+    <string name="go">Allons-y</string>
+    <string name="brand">Marque</string>
+    <string name="price">Prix</string>
+    <string name="type">Taper</string>
+    <string name="link">Relier</string>
+    <string name="change_setting">Voulez-vous vraiment modifier ce paramètre?</string>
+    <string name="attention">Attention!</string>
+    <string name="yes">Oui</string>
+    <string name="cancel">Annuler</string>
+    <string name="rate_us">Évaluez nous</string>
+    <string name="submit">Soumettre</string>
+    <string name="rate_text">Comment aimez-vous notre application? Donnez-nous votre avis!</string>
+    <string name="rating_alert">Êtes-vous sûr de vouloir nous évaluer %s?</string>
+    <string name="confirm_rating">Merci de nous noter!</string>
+    <string name="confirm">Confirmer</string>
+    <string name="ok">d\'accord</string>
+    <string name="back">dos</string>
+</resources>

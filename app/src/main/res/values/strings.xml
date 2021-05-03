@@ -6,7 +6,7 @@
     <string name="version_number">Version Number</string>
     <string name="copyright">Copyright</string>
     <string name="done">Done</string>
-    <string name="copyright_text">&#169; 2021, Anh Nguyen</string>
+    <string name="copyright_text" translatable="false">&#169; 2021, Anh Nguyen</string>
     <string name="settings">Settings</string>
     <string name="confirm_rating_alert">Show message to confirm rating</string>
     <string name="look_up_category">Category to look up makeup products</string>
