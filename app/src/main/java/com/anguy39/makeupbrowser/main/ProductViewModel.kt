@@ -32,6 +32,8 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
     var productList: LiveData<List<Product>> = _productList
     var currProduct: Product = Product()
 
+    var username: String = "User"
+
     fun fetchFromBrand(brand: String) {
 //        Log.d(TAG, "start fetching ...")
         val productListRequest: Call<List<Product>> = productApi.fetchFromBrand(brand)
@@ -103,6 +105,10 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
 
     fun updateProduct(product: Product) {
         this.currProduct = product
+    }
+
+    fun updateUser(user: String) {
+        this.username = user
     }
 
     companion object {

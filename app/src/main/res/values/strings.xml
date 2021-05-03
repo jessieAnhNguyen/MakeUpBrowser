@@ -26,9 +26,9 @@
     <string name="pitch">We have the most up-to-date information about makeup products</string>
     <string name="instruction">You can go to Settings to choose whether to search by product type or brand</string>
     <string name="go">Let\'s go</string>
-    <string name="list_of_brand">List of Brands</string>
-    <string name="list_of_type">List of Product Types</string>
-    <string name="result">Your Search Result</string>
+    <string name="list_of_brand">List of Brands for %s</string>
+    <string name="list_of_type">List of Product Types for %s</string>
+    <string name="result">Here is your search result</string>
     <string name="brand">Brand</string>
     <string name="price">Price</string>
     <string name="type">Type</string>
@@ -45,5 +45,7 @@
     <string name="confirm">Confirm</string>
     <string name="ok">OK</string>
     <string name="back">Back</string>
+    <string name="result_name" translatable="false">Hey %s</string>
+    <string name="product_comment">Hope you like it, %s!</string>
 
 </resources>

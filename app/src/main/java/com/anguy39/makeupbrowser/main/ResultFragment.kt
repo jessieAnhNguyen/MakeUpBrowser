@@ -42,6 +42,7 @@ class ResultFragment : Fragment() {
             doneResultButton.setOnClickListener{
                 it.findNavController().navigate(R.id.action_resultFragment_to_listFragment)
             }
+            resultNameTextView.text = getString(R.string.result_name, sharedViewModel.username)
 
         }
         return resultFragmentBinding.root

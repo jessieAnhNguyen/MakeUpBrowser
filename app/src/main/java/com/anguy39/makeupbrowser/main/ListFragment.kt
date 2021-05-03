@@ -58,8 +58,8 @@ class ListFragment : Fragment() {
             }
         }
 
-        if (sharedViewModel.currCategory == "brand") binding?.listTextView!!.text = getString(R.string.list_of_brand)
-        else binding?.listTextView!!.text = getString(R.string.list_of_type)
+        if (sharedViewModel.currCategory == "brand") binding?.listTextView!!.text = resources.getString(R.string.list_of_brand, sharedViewModel.username)
+        else binding?.listTextView!!.text = getString(R.string.list_of_type, sharedViewModel.username)
 
         return listFragmentBinding.root
     }

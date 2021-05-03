@@ -36,16 +36,9 @@ class ProductDialog : DialogFragment() {
             doneProductButton.setOnClickListener {
                 it.findNavController().navigate(R.id.action_productFragment_to_resultFragment)
             }
+            productCommentTextView.text = getString(R.string.product_comment, sharedViewModel.username)
         }
     }
-
-//    override fun onResume() {
-//        super.onResume()
-//        val params: ViewGroup.LayoutParams = dialog!!.window!!.attributes
-//        params.width = ViewGroup.LayoutParams.MATCH_PARENT
-//        params.height = ViewGroup.LayoutParams.MATCH_PARENT
-//        dialog!!.window!!.attributes = params as WindowManager.LayoutParams
-//    }
 
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

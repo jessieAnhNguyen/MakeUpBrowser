@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         const val CONFIRM_RATING = "confirm_rating_alert"
         const val CATEGORY_CHOICE = "category_choice"
         const val THEME_SELECTION = "theme_selection"
+        const val USERNAME = "username"
     }
 
 }

@@ -14,6 +14,7 @@ import com.anguy39.makeupbrowser.MainActivity
 import com.anguy39.makeupbrowser.MainActivity.Companion.CATEGORY_CHOICE
 import com.anguy39.makeupbrowser.MainActivity.Companion.CONFIRM_RATING
 import com.anguy39.makeupbrowser.MainActivity.Companion.THEME_SELECTION
+import com.anguy39.makeupbrowser.MainActivity.Companion.USERNAME
 import com.anguy39.makeupbrowser.main.ProductViewModel
 
 private const val TAG = "SettingsFragment"
@@ -38,17 +39,13 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         Log.d(TAG, "change here!")
         when (key) {
-            CONFIRM_RATING -> {
-//                Log.d(TAG, "set new settings")
-//                changeSettingAlert("confirm")
-            }
             CATEGORY_CHOICE -> {
 //                Log.d(TAG, "change category")
 //                changeSettingAlert("category")
                 setCategory()
             }
-            THEME_SELECTION -> {
-//                changeSettingAlert("theme")
+            USERNAME -> {
+                sharedViewModel.updateUser(prefs.getString(USERNAME, "User").toString())
             }
         }
     }

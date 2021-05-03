@@ -19,4 +19,11 @@
         android:key="theme_selection"
         android:title="Dark Mode" />
 
+    <EditTextPreference
+        android:defaultValue="User"
+        android:key="username"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Enter you name here" />
+
 </PreferenceScreen>
