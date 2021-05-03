@@ -44,5 +44,6 @@
     <string name="confirm_rating">Thank you for rating us!</string>
     <string name="confirm">Confirm</string>
     <string name="ok">OK</string>
+    <string name="back">Back</string>
 
 </resources>

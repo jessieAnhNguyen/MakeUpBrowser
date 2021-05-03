@@ -24,7 +24,7 @@ class ProductViewModel(app: Application) : AndroidViewModel(app) {
             "Foundation", "Lipstick", "Mascara"))
     var typeList: LiveData<List<String>> = _typeList
 
-    var currCategory: String = ""
+    var currCategory: String = "brand"
     var currBrand: String = ""
     var currType: String = ""
 
