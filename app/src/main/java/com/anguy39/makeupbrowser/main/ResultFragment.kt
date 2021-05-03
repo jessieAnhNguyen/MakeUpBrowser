@@ -1,6 +1,7 @@
 package com.anguy39.makeupbrowser.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -13,6 +14,7 @@ import com.anguy39.makeupbrowser.databinding.FragmentResultBinding
 import com.anguy39.makeupbrowser.databinding.ListFragmentBinding
 import com.anguy39.makeupbrowser.databinding.RecyclerItemBinding
 
+private const val TAG = "ResultFragment"
 class ResultFragment : Fragment() {
     private val sharedViewModel: ProductViewModel by activityViewModels()
     private var binding: FragmentResultBinding? = null
@@ -25,14 +27,21 @@ class ResultFragment : Fragment() {
         setHasOptionsMenu(true)
         val resultFragmentBinding = FragmentResultBinding.inflate(inflater, container, false)
         binding = resultFragmentBinding
-
         productAdapter = ProductAdapter()
+
+        binding?.doneResultButton!!.setOnClickListener{
+            it.findNavController().navigate(R.id.action_resultFragment_to_listFragment)
+        }
 
         binding?.apply {
             productRecyclerView.run {
                 layoutManager = LinearLayoutManager(context)
                 adapter = productAdapter
             }
+            doneResultButton.setOnClickListener{
+                it.findNavController().navigate(R.id.action_resultFragment_to_listFragment)
+            }
+
         }
         return resultFragmentBinding.root
     }
@@ -47,7 +56,10 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
-            resultTitleTextView.text = sharedViewModel.currBrand
+            if (sharedViewModel.currCategory == "brand") resultTitleTextView.text = sharedViewModel.currBrand
+            else {
+                resultTitleTextView.text = sharedViewModel.currType
+            }
         }
     }
 

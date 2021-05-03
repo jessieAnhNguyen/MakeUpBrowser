@@ -7,7 +7,12 @@ import retrofit2.http.Query
 
 interface ProductAPI {
     @GET("api/v1/products.json")
-    fun fetchProduct(
+    fun fetchFromBrand(
         @Query("brand") brand: String
+    ): Call<List<Product>>
+
+    @GET("api/v1/products.json")
+    fun fetchFromType(
+        @Query("product_type") product_type: String
     ): Call<List<Product>>
 }

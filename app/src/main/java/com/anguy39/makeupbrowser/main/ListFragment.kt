@@ -53,6 +53,9 @@ class ListFragment : Fragment() {
                 if (sharedViewModel.currCategory == "brand") adapter = brandAdapter
                 else adapter = typeAdapter
             }
+            doneListButton.setOnClickListener {
+                it.findNavController().navigate(R.id.action_listFragment_to_welcomeFragment)
+            }
         }
 
         if (sharedViewModel.currCategory == "brand") binding?.listTextView!!.text = getString(R.string.list_of_brand)
@@ -137,7 +140,7 @@ class ListFragment : Fragment() {
             }
 
             override fun onClick(v: View?) {
-                sharedViewModel.fetchFromBrand(type)
+                sharedViewModel.fetchFromType(type)
                 sharedViewModel.updateType(type)
                 binding.root.findNavController().navigate(R.id.action_listFragment_to_resultFragment)
 
