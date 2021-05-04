@@ -35,4 +35,5 @@
     <string name="ok">d\'accord</string>
     <string name="back">dos</string>
     <string name="product_comment">J\'espère que vous l\'aimez, %s!</string>
+    <string name="username_instruction">et pour entrer votre nom d\'utilisateur</string>
 </resources>

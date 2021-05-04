@@ -13,7 +13,6 @@ import androidx.preference.PreferenceManager
 import com.anguy39.makeupbrowser.MainActivity
 import com.anguy39.makeupbrowser.MainActivity.Companion.CATEGORY_CHOICE
 import com.anguy39.makeupbrowser.MainActivity.Companion.CONFIRM_RATING
-import com.anguy39.makeupbrowser.MainActivity.Companion.THEME_SELECTION
 import com.anguy39.makeupbrowser.MainActivity.Companion.USERNAME
 import com.anguy39.makeupbrowser.main.ProductViewModel
 
@@ -40,8 +39,6 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         Log.d(TAG, "change here!")
         when (key) {
             CATEGORY_CHOICE -> {
-//                Log.d(TAG, "change category")
-//                changeSettingAlert("category")
                 setCategory()
             }
             USERNAME -> {
@@ -60,28 +57,6 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         Log.d(TAG, "current category is ${sharedViewModel.currCategory}")
 
     }
-
-//    fun changeSettingAlert(setting: String) {
-//        val msg = resources.getString(R.string.change_setting)
-//        val builder = android.app.AlertDialog.Builder(context)
-//        with(builder) {
-//            setTitle(R.string.attention)
-//            setMessage(msg)
-//            setPositiveButton(R.string.yes) { _, _ ->
-//            }
-//            setNegativeButton(R.string.cancel) { _, _ ->
-//                with(prefs.edit()) {
-//                    when (setting) {
-//                        "confirm" -> remove(CONFIRM_SETTINGS)
-//                        "category" -> remove(CATEGORY_CHOICE)
-//                        "theme" -> remove(THEME_SELECTION)
-//                    }
-//                    apply()
-//                }
-//            }
-//            show()
-//        }
-//    }
 
 
     override fun onDestroyView() {

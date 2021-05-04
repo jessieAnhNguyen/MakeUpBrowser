@@ -47,5 +47,6 @@
     <string name="back">Back</string>
     <string name="result_name" translatable="false">Hey %s</string>
     <string name="product_comment">Hope you like it, %s!</string>
+    <string name="username_instruction">and to enter your username</string>
 
 </resources>
